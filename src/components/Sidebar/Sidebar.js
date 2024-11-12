@@ -15,6 +15,7 @@ import ChatBubbleOutlineIcon from '@mui/icons-material/ChatBubbleOutline';
 import ManageAccountsIcon from '@mui/icons-material/ManageAccounts';
 import AssessmentIcon from '@mui/icons-material/Assessment';
 import LogoutIcon from '@mui/icons-material/Logout';
+import CloseIcon from '@mui/icons-material/Close';
 
 
 export default function Sidebar() {
@@ -53,11 +54,15 @@ export default function Sidebar() {
         ]
     })
     return (
-        <aside className="sticky top-0 left-0  w-1/5  overflow-y-auto h-[calc(100vh-72px)] bg-blue-50/30 p-3">
+        <aside className="fixed top-0 lg:top-[72px] -left-52 lg:left-0 bottom-0 w-52 lg:w-1/5  overflow-y-auto  bg-[#FAFCFF] p-3 custom-scroll z-50">
+            <div className='flex justify-end lg:hidden'>
+                <CloseIcon className='cursor-pointer'></CloseIcon>
+            </div>
             <SidebarBox {...dashboard}></SidebarBox>
             <SidebarBox {...quickMenu} className="mt-3"></SidebarBox>
+            <SidebarBox {...notifications} className="mt-3"></SidebarBox>
             <SidebarBox {...staff} className="mt-3"></SidebarBox>
-            <button className='mt-24'><LogoutIcon className='w-7 h-7'></LogoutIcon> Log Out</button>
+            <button className='mt-5'><LogoutIcon className='w-7 h-7'></LogoutIcon> Log Out</button>
         </aside>
     )
 }

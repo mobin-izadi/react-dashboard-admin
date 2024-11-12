@@ -3,6 +3,7 @@ import NotificationsIcon from '@mui/icons-material/Notifications';
 import SettingsIcon from '@mui/icons-material/Settings';
 import profile from '../assets/images/profile.png'
 import LanguageIcon from '@mui/icons-material/Language';
+import MenuIcon from '@mui/icons-material/Menu';
 
 export default function Header() {
     return (
@@ -28,9 +29,13 @@ export default function Header() {
                     <button><SettingsIcon className='text-gray-800'></SettingsIcon></button>
                 </div>
                 {/* profile */}
-                <div className='w-12 h-12 rounded-full overflow-hidden'>
+                <div className='w-12 h-12 rounded-full overflow-hidden hidden lg:block'>
                     <img src={profile} alt="" className='w-full h-full object-cover' />
                 </div>
+                {/* menu hamberger */}
+                <button className='inline-block lg:hidden'>
+                    <MenuIcon className='!w-8 !h-8'></MenuIcon>
+                </button>
 
 
             </div>
