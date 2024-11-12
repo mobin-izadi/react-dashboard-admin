@@ -5,8 +5,8 @@ module.exports = {
   ],
   theme: {
     extend: {
-      fontFamily:{
-        'sans':['sans']
+      fontFamily: {
+        'sans3': ['sans']
       }
     },
   },

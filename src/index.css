@@ -2,68 +2,80 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base{
-    @font-face{
+@layer base {
+    @font-face {
         font-family: 'sans';
         src: url('./assets/fonts/sans/sans-Bold.ttf') format('truetype');
         font-style: normal;
         font-weight: 800;
         font-display: swap;
     }
-    @font-face{
+
+    @font-face {
         font-family: 'sans';
         src: url('./assets/fonts/sans/sans-Bold.ttf') format('truetype');
         font-style: normal;
         font-weight: 800;
         font-display: swap;
     }
-    @font-face{
+
+    @font-face {
         font-family: 'sans';
         src: url('./assets/fonts/sans/sans-Bold.ttf') format('truetype');
         font-style: normal;
         font-weight: 800;
         font-display: swap;
     }
-    @font-face{
+
+    @font-face {
         font-family: 'sans';
         src: url('./assets/fonts/sans/sans-Bold.ttf') format('truetype');
         font-style: normal;
         font-weight: 700;
         font-display: swap;
     }
-    @font-face{
+
+    @font-face {
         font-family: 'sans';
         src: url('./assets/fonts/sans/sans-ExtraBold.ttf') format('truetype');
         font-style: normal;
         font-weight: 800;
         font-display: swap;
     }
-    @font-face{
+
+    @font-face {
         font-family: 'sans';
         src: url('./assets/fonts/sans/sans-SemiBold.ttf') format('truetype');
         font-style: normal;
         font-weight: 600;
         font-display: swap;
     }
-    @font-face{
+
+    @font-face {
         font-family: 'sans';
         src: url('./assets/fonts/sans/sans-Medium.ttf') format('truetype');
         font-style: normal;
         font-weight: 500;
         font-display: swap;
     }
-    @font-face{
+
+    @font-face {
         font-family: 'sans';
         src: url('./assets/fonts/sans/sans-Regular.ttf') format('truetype');
         font-style: normal;
         font-weight: 400;
         font-display: swap;
     }
-    @font-face{
+
+    @font-face {
         font-family: 'sans';
         src: url('./assets/fonts/sans/sans-Light.ttf') format('truetype');
         font-style: normal;
         font-weight: 300;
         font-display: swap;
+    }
+
+    body {
+        @apply font-sans3 font-normal;
     }
 }
