@@ -81,6 +81,8 @@
 }
 
 @layer components {
+
+
   /* width */
   .custom-scroll::-webkit-scrollbar {
     width: 7px;

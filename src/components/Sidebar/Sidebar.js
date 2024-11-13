@@ -1,5 +1,6 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import SidebarBox from './SidebarBox';
+import MobileMenuContext from '../../context/MobileMenuContext';
 // icons
 import HomeIcon from '@mui/icons-material/Home';
 import TimelineIcon from '@mui/icons-material/Timeline';
@@ -18,7 +19,14 @@ import LogoutIcon from '@mui/icons-material/Logout';
 import CloseIcon from '@mui/icons-material/Close';
 
 
+
+
 export default function Sidebar() {
+    const mobileMenuHandler = useContext(MobileMenuContext)
+    const CloseMobileMenuHandler = () => {
+        mobileMenuHandler.setMobileMenu(false)
+    }
+
     const [dashboard, setDashboard] = useState({
         title: 'Dashboard',
         items: [
@@ -53,16 +61,23 @@ export default function Sidebar() {
             { id: 2, title: 'Reports', icon: <AssessmentIcon />, path: '/Reports-staff' },
         ]
     })
+
     return (
-        <aside className="fixed top-0 lg:top-[72px] -left-52 lg:left-0 bottom-0 w-52 lg:w-1/5  overflow-y-auto  bg-[#FAFCFF] p-3 custom-scroll z-50">
-            <div className='flex justify-end lg:hidden'>
-                <CloseIcon className='cursor-pointer'></CloseIcon>
+        <>
+            <aside className={` fixed top-0 lg:top-[72px]  lg:left-0 bottom-0 w-52 lg:w-1/5  overflow-y-auto  bg-[#FAFCFF] p-3 custom-scroll z-50 transition-all ${mobileMenuHandler.mobileMenu ? 'left-0' : '-left-52'}`}>
+                <div className='flex justify-end lg:hidden'>
+                    <CloseIcon className='cursor-pointer' onClick={CloseMobileMenuHandler} ></CloseIcon>
+                </div>
+                <SidebarBox {...dashboard}></SidebarBox>
+                <SidebarBox {...quickMenu} className="mt-3"></SidebarBox>
+                <SidebarBox {...notifications} className="mt-3"></SidebarBox>
+                <SidebarBox {...staff} className="mt-3"></SidebarBox>
+                <button className='mt-5'><LogoutIcon className='w-7 h-7'></LogoutIcon> Log Out</button>
+            </aside>
+            {/* blur */}
+            <div className={`fixed inset-0 bg-white/30 backdrop-blur-[3px] z-30 ${mobileMenuHandler.mobileMenu ? 'block' : 'hidden'} `} onClick={CloseMobileMenuHandler}>
+
             </div>
-            <SidebarBox {...dashboard}></SidebarBox>
-            <SidebarBox {...quickMenu} className="mt-3"></SidebarBox>
-            <SidebarBox {...notifications} className="mt-3"></SidebarBox>
-            <SidebarBox {...staff} className="mt-3"></SidebarBox>
-            <button className='mt-5'><LogoutIcon className='w-7 h-7'></LogoutIcon> Log Out</button>
-        </aside>
+        </>
     )
 }
