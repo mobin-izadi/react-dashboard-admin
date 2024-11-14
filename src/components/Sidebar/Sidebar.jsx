@@ -64,15 +64,17 @@ export default function Sidebar() {
 
     return (
         <>
-            <aside className={` fixed top-0 lg:top-[72px]  lg:left-0 bottom-0 w-52 lg:w-1/5  overflow-y-auto  bg-[#FAFCFF] p-3 custom-scroll z-50 transition-all ${mobileMenuHandler.mobileMenu ? 'left-0' : '-left-52'}`}>
-                <div className='flex justify-end lg:hidden'>
-                    <CloseIcon className='cursor-pointer' onClick={CloseMobileMenuHandler} ></CloseIcon>
+            <aside className={` fixed top-0 lg:top-[72px]  lg:left-0 bottom-0 flex flex-col justify-between  gap-4 w-52 lg:w-1/5  overflow-y-auto  bg-[#FAFCFF] p-3 custom-scroll z-50 transition-all ${mobileMenuHandler.mobileMenu ? 'left-0' : '-left-52'}`}>
+                <div>
+                    <div className='flex justify-end lg:hidden'>
+                        <CloseIcon className='cursor-pointer' onClick={CloseMobileMenuHandler} ></CloseIcon>
+                    </div>
+                    <SidebarBox {...dashboard}></SidebarBox>
+                    <SidebarBox {...quickMenu} className="mt-3"></SidebarBox>
+                    <SidebarBox {...notifications} className="mt-3"></SidebarBox>
+                    <SidebarBox {...staff} className="mt-3"></SidebarBox>
                 </div>
-                <SidebarBox {...dashboard}></SidebarBox>
-                <SidebarBox {...quickMenu} className="mt-3"></SidebarBox>
-                <SidebarBox {...notifications} className="mt-3"></SidebarBox>
-                <SidebarBox {...staff} className="mt-3"></SidebarBox>
-                <button className='mt-5'><LogoutIcon className='w-7 h-7'></LogoutIcon> Log Out</button>
+                <button className='w-[81px]'><LogoutIcon className='w-7 h-7'></LogoutIcon> Log Out</button>
             </aside>
             {/* blur */}
             <div className={`fixed inset-0 bg-white/30 backdrop-blur-[3px] z-30 ${mobileMenuHandler.mobileMenu ? 'block' : 'hidden'} `} onClick={CloseMobileMenuHandler}>

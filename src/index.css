@@ -81,11 +81,9 @@
 }
 
 @layer components {
-
-
   /* width */
   .custom-scroll::-webkit-scrollbar {
-    width: 7px;
+    width: 4px;
     border-radius: 20px;
   }
 
