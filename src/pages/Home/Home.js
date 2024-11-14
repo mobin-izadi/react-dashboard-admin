@@ -1,7 +1,9 @@
 import React from 'react'
-
+import Features from '../../components/Home/Features/Features'
 export default function Home() {
     return (
-        <div>Home</div>
+        <>
+            <Features></Features>
+        </>
     )
 }
