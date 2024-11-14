@@ -1,6 +1,6 @@
 import { useRoutes } from "react-router-dom";
 import routes from './routes'
-import Header from "./components/Header";
+import Header from "./components/Header/Header";
 import Sidebar from "./components/Sidebar/Sidebar"
 import MobileMenuContext from "./context/MobileMenuContext";
 import { useState } from "react";
