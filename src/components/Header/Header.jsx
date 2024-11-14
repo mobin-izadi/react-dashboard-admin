@@ -1,9 +1,9 @@
 import React, { useContext } from 'react'
-import MobileMenuContext from '../context/MobileMenuContext';
+import MobileMenuContext from '../../context/MobileMenuContext';
 // icons
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import SettingsIcon from '@mui/icons-material/Settings';
-import profile from '../assets/images/profile.png'
+import profile from '../../assets/images/profile.png'
 import LanguageIcon from '@mui/icons-material/Language';
 import MenuIcon from '@mui/icons-material/Menu';
 
