@@ -2,7 +2,7 @@ import React from 'react'
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 
 export default function Chart({ title, data, height, yaxis, grid }) {
-    console.log(height);
+
 
     return (
         <section className='bg-white rounded-lg border shadow-sm p-5 '>
