@@ -8,8 +8,8 @@ export default function Features() {
     ])
     return (
 
-        <div className='flex justify-between items-center gap-8'>
-            {data.map(item => <FeatureBox key={item.id} {...item}></FeatureBox>)}
+        <div className='flex justify-between items-center  gap-4 md:gap-8 flex-wrap md:flex-nowrap '>
+            {data.map((item, index) => <FeatureBox key={item.id} {...item} customStyle={index == data.length - 1 ? '' : 'sm:flex-1 md:flex-auto'}></FeatureBox>)}
         </div>
 
     )
