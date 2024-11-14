@@ -8,7 +8,7 @@ export default function ShowUserInfo({ profile, name, lastName, position, phone,
         setShowUser(false)
     }
     return (
-        <div className='fixed inset-0 flex justify-center items-center'>
+        <div className='fixed inset-0 flex justify-center items-center bg-white/10 backdrop-blur-sm'>
             <div className='bg-white rounded-lg shadow-lg w-[350px] sm:w-[620px]  z-40 p-5'>
                 <div className='flex justify-end'>
                     <button onClick={userShowClose}>
