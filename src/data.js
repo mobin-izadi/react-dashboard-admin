@@ -66,4 +66,11 @@ const users = [
     }
 ];
 
-export { dataChartHome, users }
+const TransActionsData = [
+    { id: 0, img: '/images/profiles/1.png', customer: 'mobin', date: '12 Jun 2024', amount: 1_154_876, status: 'Approved' },
+    { id: 1, img: '/images/profiles/2.jpg', customer: 'alireza', date: '15 Mar 2024', amount: 25_000_000, status: 'Declined' },
+    { id: 2, img: '/images/profiles/3.jpg', customer: 'amir', date: '5 Feb 2024', amount: 5_000, status: 'pending' },
+    { id: 3, img: '/images/profiles/4.jpg', customer: 'kian', date: '30 Jul 2024', amount: 11_000, status: 'Approved' },
+]
+
+export { dataChartHome, users, TransActionsData }
