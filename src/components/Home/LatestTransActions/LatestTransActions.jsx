@@ -28,7 +28,7 @@ export default function LatestTransActions() {
             <span className='text-2xl'>Latest TransActions</span>
             {/* Latest TransActions wrapper */}
             <div className=' mt-3 overflow-x-auto'>
-                <table className='w-full border-collapse'>
+                <table className='w-full border-collapse z-0'>
                     <thead>
                         <tr >
                             <th className='text-start'>
