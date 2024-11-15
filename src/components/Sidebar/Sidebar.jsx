@@ -64,7 +64,7 @@ export default function Sidebar() {
 
     return (
         <>
-            <aside className={` fixed top-0 lg:top-[72px]  lg:left-0 bottom-0 flex flex-col justify-between  gap-4 w-52 lg:w-1/5  overflow-y-auto  bg-[#FAFCFF] p-3 custom-scroll z-50 transition-all ${mobileMenuHandler.mobileMenu ? 'left-0' : '-left-52'}`}>
+            <aside className={` fixed lg:sticky top-0 lg:left-0 bottom-0 lg:bottom-auto lg:h-[calc(100vh-72px)] flex flex-col justify-between  gap-4 w-52 lg:w-1/5  overflow-y-auto  bg-[#FAFCFF] p-3 custom-scroll z-50 transition-all ${mobileMenuHandler.mobileMenu ? 'left-0' : '-left-52'}`}>
                 <div>
                     <div className='flex justify-end lg:hidden'>
                         <CloseIcon className='cursor-pointer' onClick={CloseMobileMenuHandler} ></CloseIcon>
