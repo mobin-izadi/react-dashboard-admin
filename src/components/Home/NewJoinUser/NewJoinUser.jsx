@@ -18,7 +18,7 @@ export default function NewJoinUser() {
 
     return (
         <>
-            <section className='bg-white rounded-lg border shadow-sm p-5 basis-full lg:basis-1/3'>
+            <section className='bg-white rounded-lg border shadow-sm p-2 xl:p-5 basis-full lg:basis-1/2 xl:basis-1/3 '>
                 <span className='text-2xl'>New Join Members</span>
                 <ul className='mt-4 space-y-4'>
                     {usersData.slice(0, 5).map((user) => (

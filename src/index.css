@@ -76,7 +76,7 @@
   }
 
   body {
-    @apply font-sans3 font-normal;
+    @apply font-sans3 font-normal overflow-x-hidden;
   }
 }
 
@@ -84,6 +84,7 @@
   /* width */
   .custom-scroll::-webkit-scrollbar {
     width: 4px;
+    height: 4px;
     border-radius: 20px;
   }
 

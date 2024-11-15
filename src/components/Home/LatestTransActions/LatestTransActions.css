@@ -1,0 +1,26 @@
+table {
+  @apply block sm:table;
+}
+thead {
+  @apply hidden sm:table-header-group;
+}
+tbody {
+  @apply block sm:table-row-group;
+}
+tr {
+  @apply block sm:table-row;
+}
+th,
+td {
+  @apply block sm:table-cell;
+}
+td {
+  @apply relative pl-[50%] sm:pl-0;
+}
+td:before {
+  @apply sm:hidden;
+  position: absolute;
+  left: 6px;
+  content: attr(data-label) ' : ';
+  font-weight: bold;
+}
