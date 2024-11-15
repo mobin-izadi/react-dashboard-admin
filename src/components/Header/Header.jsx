@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import MobileMenuContext from '../../context/MobileMenuContext';
 
 // icons
@@ -17,12 +17,18 @@ export default function Header() {
         { id: 2, massage: 'A new product has been added', isRead: false },
     ])
 
+    useEffect(() => {
+        let filterNotific = notific.filter(noti => noti.isRead == false)
+
+        if (JSON.stringify(filterNotific) != JSON.stringify(notific)) {
+            setNotific(filterNotific)
+        }
+    }, [notific])
 
 
     const readNotific = (id) => {
-        console.log(id);
-
-
+        let filterNotific = notific.filter(noti => noti.id != id)
+        setNotific(filterNotific)
     }
 
     const mobileMenuHandler = () => {
@@ -44,12 +50,15 @@ export default function Header() {
                     </div>) : ''}
                     {/* list notific */}
                     <ul className='opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-all absolute -right-24 sm:right-0 w-[300px] sm:w-[350px] h-40 bg-white rounded-lg shadow-md border z-30  p-2 overflow-y-auto custom-scroll space-y-1'>
-                        {notific.map(noti => (
-                            <li key={noti.id} className='flex justify-between items-center gap-1 border-b pb-1 '>
-                                <span className='line-clamp-1'> {noti.massage}</span>
-                                <button className='bg-blue-500 text-white rounded-md py-1 px-3' onClick={() => readNotific(noti.id)}>Read</button>
-                            </li>
-                        ))}
+                        {notific.length > 0 ? (
+                            notific.map(noti => (
+                                !noti.isRead &&
+                                <li key={noti.id} className='flex justify-between items-center gap-1 border-b pb-1 '>
+                                    <span className='line-clamp-1'> {noti.massage}</span>
+                                    <button className='bg-blue-500 text-white rounded-md py-1 px-3' onClick={() => readNotific(noti.id)}>Read</button>
+                                </li>
+                            ))) : (<div className='flex justify-center items-center w-full h-full text-green-500'>You do not have notifications :)</div>)
+                        }
                     </ul>
 
                 </div>
