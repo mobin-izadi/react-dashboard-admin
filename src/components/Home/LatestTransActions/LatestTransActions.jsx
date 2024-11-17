@@ -1,6 +1,7 @@
 import React from 'react'
 import './LatestTransActions.css'
 import { TransActionsData } from '../../../data'
+import clsx from 'clsx'
 
 export default function LatestTransActions() {
     const Button = ({ type }) => {
@@ -18,9 +19,18 @@ export default function LatestTransActions() {
             default:
                 break;
         }
-        return <button className={`flex justify-center items-center w-[85px] h-8 bg-${color}-100 rounded-lg `}>
-            <span className={`text-${color}-500 text-sm font-light`}>{type}</span>
-        </button>
+        return <button className={clsx('flex justify-center items-center w-[85px] h-8 rounded-lg',
+            type === 'Approved'
+                ? 'bg-green-100 text-green-500'
+                : type === 'Declined'
+                    ? 'bg-red-100 text-red-500'
+                    : type === 'pending'
+                        ? 'bg-blue-100 text-blue-500'
+                        : ''
+        )
+        }>
+            <span className={` text-sm font-light`}>{type}</span>
+        </button >
     }
 
     return (
