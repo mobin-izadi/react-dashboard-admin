@@ -5,9 +5,9 @@ import { usersData } from '../../data';
 import ModeEditIcon from '@mui/icons-material/ModeEdit';
 import DeleteIcon from '@mui/icons-material/Delete';
 const columns = [
-    { field: 'id', headerName: 'ID' },
+    { field: 'id', headerName: 'ID', flex: 1, minWidth: 100 },
     {
-        field: 'customer', headerName: 'User name',
+        field: 'customer', headerName: 'User name', flex: 1, minWidth: 100,
         renderCell: (params) => (
             <div style={{ display: 'flex', alignItems: 'center' }}>
                 <img
@@ -24,28 +24,23 @@ const columns = [
             </div>
         ),
     },
-    { field: 'email', headerName: 'Email' },
+    { field: 'email', headerName: 'Email', flex: 1, minWidth: 100, },
     {
-        field: 'status', headerName: 'Status',
-        renderCell: (params) => (
-            <span className={`${params.row.status == 'active' ? 'text-green-500 ' : 'text-red-500 '}`}>
-                {params.row.status}
-            </span>
-        )
+        field: 'status', headerName: 'Status', flex: 1, minWidth: 100,
     },
     {
         field: 'transaction',
         headerName: 'Transaction',
-
+        flex: 1, minWidth: 100,
         renderCell: (params) => (
             <span>{params.row.transaction.toLocaleString()}</span>
         )
     },
     {
-        field: 'action', headerName: 'Action',
+        field: 'action', headerName: 'Action', flex: 1, minWidth: 100,
         renderCell: (params) => (
             <div className='flex items-center gap-2'>
-                <button><ModeEditIcon className='text-green-500'></ModeEditIcon></button>
+                <button><ModeEditIcon ></ModeEditIcon></button>
                 <button><DeleteIcon className='text-red-500'></DeleteIcon></button>
 
             </div>
@@ -67,14 +62,18 @@ export default function Users() {
 
 
     return (
-        <Paper sx={{ height: 'calc(100vh - 72px)', width: '100%', }} className=''>
+        <Paper sx={{ height: 'calc(100vh - 72px)', width: '100%', overflowX: 'auto' }} >
             <DataGrid
                 rows={rows}
                 columns={columns}
                 initialState={{ pagination: { paginationModel } }}
                 pageSizeOptions={[10, 25]}
                 checkboxSelection
-                sx={{ border: 0 }}
+                sx={{
+                    border: 0,
+                    overflowX: 'auto',
+                }}
+                className='overflow-x-auto'
             />
         </Paper>
     )
