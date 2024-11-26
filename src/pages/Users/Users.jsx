@@ -4,6 +4,7 @@ import Paper from '@mui/material/Paper';
 import { usersData } from '../../data';
 import ModeEditIcon from '@mui/icons-material/ModeEdit';
 import DeleteIcon from '@mui/icons-material/Delete';
+import { Link } from 'react-router-dom';
 
 
 export default function Users() {
@@ -29,7 +30,7 @@ export default function Users() {
         },
         { field: 'email', headerName: 'Email', flex: 1, minWidth: 100, },
         {
-            field: 'status', headerName: 'Status', flex:0.5, minWidth: 100,
+            field: 'status', headerName: 'Status', flex: 0.5, minWidth: 100,
         },
         {
             field: 'transaction',
@@ -43,7 +44,9 @@ export default function Users() {
             field: 'action', headerName: 'Action', flex: 1, minWidth: 100,
             renderCell: (params) => (
                 <div className='flex items-center gap-2'>
-                    <button onClick={() => editUserHandler(params.row.id)}><ModeEditIcon ></ModeEditIcon></button>
+                    <Link to={`/users/${params.row.id}`}>
+                        <button ><ModeEditIcon ></ModeEditIcon></button>
+                    </Link>
                     <button onClick={() => removeUserHandler(params.row.id)}><DeleteIcon className='text-red-500'></DeleteIcon></button>
 
                 </div>
@@ -51,12 +54,7 @@ export default function Users() {
         },
     ];
     const paginationModel = { page: 0, pageSize: 25 };
-
     const [users, setUsers] = useState(usersData)
-
-    const editUserHandler = (id) => {
-        console.log(id);
-    }
     const removeUserHandler = (id) => {
         const filterUsers = users.filter(user => user.id != id)
         setUsers(filterUsers)
