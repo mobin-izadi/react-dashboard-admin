@@ -23,16 +23,12 @@ export default function UserDetails() {
         })
     }
     const transactionHandler = event => {
-        console.log(event.target.value);
-
         let valueTransaction = event.target.value.split('')
         let convertValueToNumber = valueTransaction.map(num => {
             if (Number(num)) {
                 return num
             }
         }).join('')
-        console.log(convertValueToNumber);
-
 
         setUser(preState => {
             return { ...preState, transaction: Number(convertValueToNumber).toLocaleString() }
@@ -47,17 +43,17 @@ export default function UserDetails() {
                     <img src={user.img} alt="" className='w-full h-full object-cover' />
                 </div>
             </div>
-            <div className='grid grid-cols-2 gap-2 w-[700px] justify-items-end mx-auto my-5'>
+            <div className='grid grid-cols-1 md:grid-cols-2 gap-2 md:w-[700px] justify-items-center md:justify-items-end mx-auto my-5'>
                 <div className='flex gap-2 items-center'>
-                    <label htmlFor="username">User Name:</label>
+                    <label htmlFor="username" className='w-[83px] md:w-auto'>User Name:</label>
                     <input type="text" name="" id="username" className='outline-none border h-10 rounded-md px-2 py-1 w-60' value={user.customer} onChange={event => userNameHandler(event)} />
                 </div>
                 <div className='flex gap-y-4 gap-x-2 items-center'>
-                    <label htmlFor="email">Email:</label>
+                    <label htmlFor="email" className='w-[83px] md:w-auto'>Email:</label>
                     <input type="email" name="" id="email" className='outline-none border h-10 rounded-md px-2 py-1 w-60' value={user.email} onChange={event => emailHandler(event)} />
                 </div>
                 <div className='flex gap-2 items-center'>
-                    <label htmlFor="status">Status:</label>
+                    <label htmlFor="status" className='w-[83px] md:w-auto'>Status:</label>
                     <select name="status" id="" className='outline-none border h-10 rounded-md px-2 py-1 w-60' value={user.status} onChange={event => statusHandler(event)}>
                         <option value="active">active</option>
                         <option value="non-active">non-active</option>
@@ -65,7 +61,7 @@ export default function UserDetails() {
 
                 </div>
                 <div className='flex gap-2 items-center'>
-                    <label htmlFor="transaction">Transaction:</label>
+                    <label htmlFor="transaction" className='w-[83px] md:w-auto'>Transaction:</label>
                     <input type="text" name="" id="transaction" className='outline-none border h-10 rounded-md px-2 py-1 w-60' value={user.transaction.toLocaleString()} onChange={event => transactionHandler(event)} />
                 </div>
 
