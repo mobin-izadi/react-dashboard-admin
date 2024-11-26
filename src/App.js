@@ -17,7 +17,7 @@ function App() {
           {/* sidebar */}
           <Sidebar></Sidebar>
           {/* main wrapper */}
-          <div className="basis-full lg:basis-4/5 lg:ml-auto px-3 sm:px-6 overflow-auto">
+          <div className="basis-full lg:basis-4/5 lg:ml-auto px-3 sm:px-6 w-full">
             {router}
           </div>
         </main>
